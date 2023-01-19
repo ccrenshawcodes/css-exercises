@@ -1,0 +1,19 @@
+.pink {
+    background-color: rgb(240, 187, 196);
+    font-family: "Veranda", "DejaVu Sans", sans-serif;
+}
+
+#primo {
+    color: rgb(59, 59, 235);
+    font-size: 36px;
+}
+
+.cool {
+    font-size: 24px;
+}
+
+#second {
+    background-color: rgb(136, 214, 136);
+    font-size: 24px;
+    font-weight: bold;
+}

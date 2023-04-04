@@ -6,10 +6,10 @@
 .container {
   text-align: center;
 
-  display: inline-grid;
-  grid-template-columns: 1fr 3fr;
+  display: grid;
+  grid-template-columns: 1fr 4fr;
   grid-template-rows: 0.1fr 0.05fr 5fr 0.1fr;
-  gap: 5px;
+  gap: 4px;
 }
 
 .container div {
@@ -20,19 +20,37 @@
   color: white;
 }
 
+/*There's something wrong with the spacing in this header.
+But I am sick of working on it rn.
+I will fix it later.
+Everything else looks fine*/
 .header {
   background-color: #393f4d;
 
   grid-column: 1 / -1;
   grid-row: 1 / 2;
 
-  display: inline-grid;
-  grid-template-columns: 2fr 3fr;
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+  grid-template-rows: 1fr;
+  grid-template-areas: 
+    "header-logo . menu-li menu-li menu-li menu-li";
+}
+
+.header > .logo {
+  grid-area: header-logo;
 }
 
 .menu ul {
-  display: inline-grid;
+  justify-content: center;
+  align-items: center;
+
+  display: grid;
   grid-template-columns: repeat(4, 1fr);
+  align-items: stretch;
+  grid-column-start: 1;
+  
+  grid-area: menu-li;
 }
 
 .menu ul,
@@ -50,7 +68,7 @@
 
   display: inline-grid;
   grid-template-rows: repeat(4, 1fr);
-  gap: 30px;
+  gap: 50px;
 }
 
 .sidebar .photo {
@@ -67,6 +85,9 @@
   color: black;
   font-size: 16px;
   font-weight: normal;
+
+  display: inline-grid;
+  align-items: center;
 }
 
 .nav {
@@ -91,8 +112,9 @@
   background-color: #bccbde;
 
   display: inline-grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  grid-template-rows: repeat(2, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-rows: repeat(2, minmax(200px, 1fr));
+  grid-auto-rows: minmax(200px, 1fr);
   gap: 15px;
 }
 
@@ -107,6 +129,7 @@
   background-color: #FFFFFF;
   color: black;
   text-align: center;
+  height: 200px;
 }
 
 .card p {
